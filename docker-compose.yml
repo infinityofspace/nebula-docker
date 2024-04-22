@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  nebula:
+    image: ghcr.io/infinityofspace/nebula-docker:latest
+    network_mode: host
+    restart: unless-stopped
+    ports:
+      - "4242:4242/udp"
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - "./config/:/config/"
+      - "./certs/:/certs/"
+    command: nebula -config /config/lighthouse_conf.yml
