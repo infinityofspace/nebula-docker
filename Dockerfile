@@ -16,6 +16,6 @@ COPY --from=build-image /go/nebula/nebula-cert /bin/nebula-cert
 RUN mkdir -p /certs
 RUN mkdir -p /config
 
-LABEL org.opencontainers.image.source https://github.com/infinityofspace/nebula-docker
+LABEL org.opencontainers.image.source=https://github.com/infinityofspace/nebula-docker
 LABEL org.opencontainers.image.licenses="MIT"
 LABEL org.opencontainers.image.version=$VERSION
