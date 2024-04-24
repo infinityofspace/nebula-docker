@@ -1,0 +1,42 @@
+pki:
+  ca: /etc/nebula/ca.crt
+  cert: /etc/nebula/{host}.crt
+  key: /etc/nebula/{host}.key
+
+static_host_map:
+  "{lighthouse_ip}": ["{lighthouse_real_ip}:{port}"]
+  
+lighthouse:
+  am_lighthouse: {lighthouse}
+  interval: 60
+  hosts:
+    - "{lighthouse_ip}"
+
+listen:
+  host: 0.0.0.0
+  port: {port}
+
+punchy:
+  punch: true
+
+tun:
+  disabled: false
+
+firewall:
+  outbound_action: drop
+  inbound_action: drop
+
+  conntrack:
+    tcp_timeout: 12m
+    udp_timeout: 3m
+    default_timeout: 10m
+
+  outbound:
+    - port: any
+      proto: any
+      host: any
+
+  inbound:
+    - port: any
+      proto: icmp
+      host: any
