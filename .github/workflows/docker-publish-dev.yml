@@ -5,6 +5,8 @@ on:
   push:
     branch:
       - dev
+    paths-ignore:
+      - Readme.md
 
 jobs:
   build-push:
