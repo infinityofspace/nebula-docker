@@ -13,8 +13,8 @@ FROM alpine:3.19
 COPY --from=build-image /go/nebula/nebula /bin/nebula
 COPY --from=build-image /go/nebula/nebula-cert /bin/nebula-cert
 
-RUN mkdir -p /certs
-RUN mkdir -p /config
+RUN mkdir -p /etc/nebula/certs
+RUN mkdir -p /etc/nebula/config
 
 LABEL org.opencontainers.image.source=https://github.com/infinityofspace/nebula-docker
 LABEL org.opencontainers.image.licenses="MIT"

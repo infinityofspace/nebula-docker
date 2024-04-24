@@ -12,6 +12,6 @@ services:
     devices:
       - /dev/net/tun:/dev/net/tun
     volumes:
-      - "./config/:/config/"
-      - "./certs/:/certs/"
-    command: nebula -config /config/lighthouse_conf.yml
+      - "./config/:/etc/nebula/config"
+      - "./certs/:/etc/nebula/certs"
+    command: nebula -config /config/conf.yml
