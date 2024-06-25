@@ -1,4 +1,4 @@
-FROM golang:1.22-alpine3.19 AS build-image
+FROM golang:1.22-alpine3.20 AS build-image
 
 ARG VERSION=master
 
@@ -8,7 +8,7 @@ RUN git clone --depth 1 -b "$(echo $VERSION | cut -d'-' -f1)" https://github.com
   && cd nebula  \
   && make bin
 
-FROM alpine:3.19
+FROM alpine:3.20
 
 COPY --from=build-image /go/nebula/nebula /bin/nebula
 COPY --from=build-image /go/nebula/nebula-cert /bin/nebula-cert
