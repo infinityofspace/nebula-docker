@@ -2,6 +2,8 @@
 
 Docker image for nebula a scalable overlay networking tool with a focus on performance, simplicity and security.
 
+__Note: This project has been archived and users are asked to migrate to the now officially available [nebula docker image](https://hub.docker.com/r/nebulaoss/nebula).__
+
 ---
 
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/infinityofspace/nebula-docker/docker-publish-release.yml?style=flat-square) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/infinityofspace/nebula-docker/docker-publish-nightly.yml?style=flat-square)
